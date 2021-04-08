@@ -78,6 +78,7 @@ const Burger = () => {
         key={"s"}
         ingrident={ingrident}
         checkedOutHandler = {checkedOutHandler}
+        checkedOut ={checkedOut}
       />
     </div>
   );
