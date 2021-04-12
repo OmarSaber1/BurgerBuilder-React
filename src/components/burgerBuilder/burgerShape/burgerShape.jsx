@@ -7,7 +7,6 @@ const BurgerShape = (props) => {
 
     let ingrident = null;
 
-    console.log(props.ingrident)
     switch(props.type){
         case ("BreadBottom") :
             <div className="BreadBottom"></div>

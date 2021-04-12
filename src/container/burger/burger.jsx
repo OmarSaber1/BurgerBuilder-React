@@ -11,7 +11,7 @@ const Burger = () => {
       { name: "Bacon", Quantity: 0, price: 1.6, totalPrice: 0 },
       { name: "Meat", Quantity: 0, price: 3, totalPrice: 0 },
       { name: "Cheese", Quantity: 0, price: 1.1, totalPrice: 0 },
-    ],
+    ]
   });
 
   const [{ checkedOut }, checkedOutSetState] = useState({
@@ -44,7 +44,6 @@ const Burger = () => {
     const index = newIngrid.indexOf(ingridnt);
     newIngrid[index] = { ...newIngrid[index] };
     //Edit
-    console.log(newIngrid[index]);
     const newQuantity = ++newIngrid[index].Quantity;
     newIngrid[index].totalPrice = newQuantity * newIngrid[index].price;
     //setState

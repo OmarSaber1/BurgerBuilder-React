@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./checkOut.css";
+import axios from 'axios'
 
 class  CheckOut extends Component{
   constructor(props){
     super(props)
   }
+  
+
 
     shouldComponentUpdate(nextProps , nextState){
       return  nextProps.checkedOut  !== this.props.checkedOut 
@@ -12,8 +15,17 @@ class  CheckOut extends Component{
     componentWillUpdate(){
       console.log("Will update")
     }
+
+    checkingOutPost =()=>{
+      console.log(2)
+      let orders = {
+        ingridents : this.props.ingrident,
+        TotalPriceIs : this.TotalPrice,
+        name:"omar"
+      }
+      axios.post('orders.json',orders).then(res=>console.log(res)).catch(err=>console.log(err))
+    }
   render(){
-    let TotalPrice = this.props.TOTAL_PRICE;
     return (
       <div>
         {this.props.checkedOut == false ? null : (
@@ -26,8 +38,8 @@ class  CheckOut extends Component{
                 </p>
               );
             })}
-            <h1>totalPrice = {TotalPrice}</h1>
-            <button className="btn btn-warning">CheckOut!</button>
+            <h1>totalPrice = {this.props.TOTAL_PRICE.toFixed(2)}</h1>
+            <button onClick={()=>this.checkingOutPost()} className="btn btn-warning">CheckOut!</button>
           </div>
         )}
       </div>
