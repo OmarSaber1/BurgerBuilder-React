@@ -8,7 +8,7 @@ const BurgerIngrident = (props) => {
     (a, { totalPrice }) => a + totalPrice,
     0
   );
-  console.log(TOTAL_PRICE)
+  console.log(TOTAL_PRICE )
 
   return (
     <div className="text-center">
