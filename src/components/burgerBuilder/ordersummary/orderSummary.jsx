@@ -34,7 +34,7 @@ const CheckOut = (props) => {
           <h1>You ordered a delicious Burger with</h1>
           {props.ingrident.map((el) => {
             return (
-              <p>
+              <p key={el.name}>
                 {el.Quantity} &nbsp; {el.name}
               </p>
             );
