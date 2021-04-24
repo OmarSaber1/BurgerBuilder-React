@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import "./checkOut.css";
+import "./orderSummary.css";
 import axios from "axios";
 
 const CheckOut = (props) => {

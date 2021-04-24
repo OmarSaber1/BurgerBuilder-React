@@ -1,7 +1,7 @@
 import React from 'react';       
 import './burgerShape.css'
 import PropTypes from 'prop-types'
-import CheckOut from '../checkOut/checkOut';
+import CheckOut from '../ordersummary/orderSummary';
 
 const BurgerShape = (props) => {
 

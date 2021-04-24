@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BurgerControl from "../burgerControl/burgerControl";
 import BurgerShape from "../burgerShape/burgerShape";
-import CheckOut from "../checkOut/checkOut";
+import CheckOut from "../ordersummary/orderSummary";
 
 const BurgerIngrident = (props) => {
-  let TOTAL_PRICE = props.ingrident.reduce(
-    (a, { totalPrice }) => a + totalPrice,
-    0
-  );
+
+  let TOTAL_PRICE = 0; 
+  useEffect(()=>{
+    TOTAL_PRICE = props.ingrident.reduce(
+      (a, { totalPrice }) => a + totalPrice,
+      0
+    )
+  },[])
+ 
   console.log(TOTAL_PRICE )
 
   return (

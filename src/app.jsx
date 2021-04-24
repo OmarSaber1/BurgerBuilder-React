@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CheckOut from './components/burgerBuilder/checkOut/checkOut';
+import CheckOut from './components/burgerBuilder/ordersummary/orderSummary';
 import NavBar from './components/NavBar/navBar';
 import Burger from './container/burger/burger';
 
