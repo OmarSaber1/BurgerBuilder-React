@@ -5,13 +5,12 @@ import CheckOut from "../ordersummary/orderSummary";
 
 const BurgerIngrident = (props) => {
 
+  console.log(props.ingrident)
   let TOTAL_PRICE = 0; 
-  useEffect(()=>{
+   if(props.ingrident){
     TOTAL_PRICE = props.ingrident.reduce(
-      (a, { totalPrice }) => a + totalPrice,
-      0
-    )
-  },[])
+      (a, { totalPrice }) => a + totalPrice,0) 
+   }
  
   console.log(TOTAL_PRICE )
 
@@ -25,6 +24,7 @@ const BurgerIngrident = (props) => {
       checkedOut = {props.checkedOut}
       TOTAL_PRICE = {TOTAL_PRICE}
        />
+       {/* <h1>{TOTAL_PRICE}</h1> */}
     </div>
   );
 };
