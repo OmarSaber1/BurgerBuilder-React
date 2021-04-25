@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./burgerControl.css";
 const BurgerControl = (props) => {
-  console.log(props);
   
   let TOTAL_PRICE = 0;
   if (props.ingrident) {
@@ -10,7 +9,6 @@ const BurgerControl = (props) => {
       0
     );
   }
-  console.log(props.ingrident);
   return (
     <div>
       {props.ingrident

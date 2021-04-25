@@ -5,7 +5,6 @@ import CheckOut from "../ordersummary/orderSummary";
 
 const BurgerIngrident = (props) => {
 
-  console.log(props.ingrident)
   let TOTAL_PRICE = 0; 
    if(props.ingrident){
     TOTAL_PRICE = props.ingrident.reduce(
