@@ -1,17 +1,24 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./orderSummary.css";
 import axios from "axios";
 
 const CheckOut = (props) => {
-
-
-  let [{isSpin},isSpinSetState] = useState({
-    isSpin : false
+  let [{ isSpin }, isSpinSetState] = useState({
+    isSpin: false,
   });
 
+  useEffect(() => {
+    axios.get("orders.json").then((res) => {
+      let orderedData = [];
+      for (let key in res.data) {
+        orderedData.push({ ...res.data[key], id:key });
+      }
+      console.log(orderedData)
+    });
+  }, []);
 
- let checkingOutPost = () => {
-   isSpinSetState({isSpin : true});
+  let checkingOutPost = () => {
+    isSpinSetState({ isSpin: true });
     let orders = {
       ingridents: props.ingrident,
       TotalPriceIs: props.TotalPrice,
@@ -19,8 +26,7 @@ const CheckOut = (props) => {
     };
     axios
       .post("orders.json", orders)
-      .then((res) =>    isSpinSetState({isSpin : false})
-      )
+      .then((res) => isSpinSetState({ isSpin: false }))
       .catch((err) => console.log(err));
   };
   return (
@@ -40,7 +46,7 @@ const CheckOut = (props) => {
             );
           })}
           <h1>totalPrice = {props.TOTAL_PRICE.toFixed(2)}</h1>
-          <button onClick={() => checkingOutPost()} className="btn btn-warning">
+          <button onClick={checkingOutPost} className="btn btn-warning">
             CheckOut!
           </button>
         </div>
